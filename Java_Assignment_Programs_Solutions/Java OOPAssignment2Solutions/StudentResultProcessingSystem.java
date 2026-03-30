@@ -36,5 +36,7 @@ class StudentResultProcessingSystem{
 		}else{
 			System.out.println("You got " + total + " out of 500 " + "and your persent is "+ percentage + "% so the Grade is Fail ");
 		}
+		String status = (percentage >= 40) ? "Promoted" : "Not Promoted";
+		System.out.println("Status: " + status);
 	}
 }
