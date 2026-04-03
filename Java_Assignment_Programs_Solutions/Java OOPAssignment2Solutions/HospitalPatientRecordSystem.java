@@ -10,7 +10,6 @@ Requirements
 ● Display patient details.
 ● Add a method to check whether the patient is a senior citizen (age 60 or above).*/
 
-import java.util.Scanner;
 class HospitalPatientRecordSystem{
 	
 		int id;
