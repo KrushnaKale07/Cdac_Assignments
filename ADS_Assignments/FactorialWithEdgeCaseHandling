@@ -1,1 +1,34 @@
+/*Problem Description:
+You are given a non-negative integer n. Write a recursive function to compute its factorial. 
+The factorial of a number n is defined as: 
+1. n! = n × (n-1) × (n-2) × ... × 1 
+2. By definition, 0! = 1 
+Your function must correctly handle the edge case when n = 0. Also consider what should 
+happen if a negative number is passed. 
+Requirements:
+1. Use recursion only (no loops). 
+2. Clearly define the base case. 
+3. Ensure your function does not cause infinite recursion*/
+
+package com.pgcp.ads.assignment1;
+
+public class FactorialWithEdgeCaseHandling {
+
+	public static void main(String[] args) {
+		int n = 4;
+
+		System.out.println(factorial(n));
+
+	}
+
+	private static int factorial(int n) {
+		int result = 0;
+		if (n == 1) {
+			return 1;	 
+		}else {
+			result = n * (factorial(n - 1));
+		}
+		return result;
+	}
+}
 
