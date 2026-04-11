@@ -1,0 +1,35 @@
+/*Problem Description:
+The Fibonacci sequence is defined as: 
+1 F(0) = 0, F(1) = 1 
+2 F(n) = F(n-1) + F(n-2) for n ≥ 2 
+Write a recursive function that returns the nth Fibonacci number. 
+Example:
+Input: n = 5 
+Output: 5*/
+
+package com.pgcp.ads.assignment1;
+
+public class FibonacciSequenceWithRecursiveDefinition {
+
+	public static int fibonacci(int n) {
+		if (n < 0) {
+			throw new IllegalArgumentException("Negative numbers not allowed");
+		}
+
+		if (n == 0)
+			return 0;
+		if (n == 1)
+			return 1;
+
+		return fibonacci(n - 1) + fibonacci(n - 2);
+
+	}
+
+	public static void main(String[] args) {
+
+		int n = 5;
+
+		System.out.println("Fibonacci of " + n + " is: " + fibonacci(n));
+	}
+
+}
