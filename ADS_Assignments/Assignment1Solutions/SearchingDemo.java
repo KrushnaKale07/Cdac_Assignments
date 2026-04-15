@@ -24,13 +24,25 @@ public class SearchingDemo {
 		return -1;
 	}
 
+	private static int linearSearch(int[] arr, int key) {
+
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == key) {
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int arr[] = { 11, 22, 33, 44, 55, 66, 77, 88, 99 };
 		System.out.println("Enter a number to find");
 		int key = scan.nextInt();
+		
 		int result = binarySearch(arr, key);
-
+		int result = linearSearch(arr, key);
 		if (result != -1) {
 			System.out.println("Number is found at : " + result);
 		} else {
