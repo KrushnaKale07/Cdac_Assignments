@@ -1,3 +1,12 @@
+/*Q1. Trace Bubble Sort Passes 
+Problem Description:
+Given an array, print the array after each pass of Bubble Sort. 
+Example:
+Input: [4, 3, 2]
+Output: 
+Pass 1: [3, 2, 4]
+Pass 2: [2, 3, 4]*/
+
 import java.util.Arrays;
 
 public class TraceBubbleSortPasses {
