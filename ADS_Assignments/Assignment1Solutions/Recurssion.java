@@ -33,6 +33,16 @@ public class Recurssion {
 
 		return index;
 	}
+	private static int recursiveFibonacciSeries(int n) {
+		if (n < 0) {
+			throw new IllegalArgumentException("Negative numbers not allowed");
+		}
+		if (n == 0)
+			return 0;
+		if (n == 1)
+			return 1;
+		return recursiveFibonacciSeries(n - 1) + recursiveFibonacciSeries(n - 2);
+	}
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -45,12 +55,16 @@ public class Recurssion {
 		int arr[] = { 44, 55, 22, 11, 88, 99, 77, 33 };
 		Arrays.sort(arr);
 
-		int index = recursiveBinarySearch(arr, 0, arr.length - 1, key);
+		/*int index = recursiveBinarySearch(arr, 0, arr.length - 1, key);
 		if (index != -1) {
 			System.out.println("Key found at : " + index);
 		} else {
 			System.out.println("Key not found.");
-		}
+		}*/
+		
+		System.err.println("Enter a number to find fibonacii.");
+		int num = scanner.nextInt();
+		System.out.println("Fibonacci of " + num + " is: " + recursiveFibonacciSeries(num));
 	}
 
 }
