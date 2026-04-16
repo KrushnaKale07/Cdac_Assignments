@@ -52,6 +52,18 @@ public class Recurssion {
 		return recursiveReverseString(str.substring(1)) + str.charAt(0);
 	}
 
+	private static boolean isSorted(int[] arr, int index) {
+		if (index == arr.length - 1) {
+			return true;
+		}
+
+		if (arr[index] > arr[index + 1]) {
+			return false;
+		}
+
+		return isSorted(arr, index + 1);
+	}
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		// System.err.println("Enter a number to find factorial.");
@@ -74,9 +86,15 @@ public class Recurssion {
 		int num = scanner.nextInt();
 		System.out.println("Fibonacci of " + num + " is: " + recursiveFibonacciSeries(num));*/
 
-		System.out.println("Enter a string to reverce");
+		/*System.out.println("Enter a string to reverce");
 		String str = scanner.next();
-		System.out.println("Reverse string of " + str + " is " + recursiveReverseString(str));
+		System.out.println("Reverse string of " + str + " is " + recursiveReverseString(str));*/
+
+		int arr1[] = { 2, 4, 6, 8 };
+		int arr2[] = { 3, 5, 2, 9 };
+
+		System.out.println(isSorted(arr1, 0));
+		System.out.println(isSorted(arr2, 0));
 	}
 
 }
