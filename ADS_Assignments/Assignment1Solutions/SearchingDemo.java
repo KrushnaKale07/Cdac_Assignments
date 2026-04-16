@@ -23,7 +23,28 @@ public class SearchingDemo {
 		}
 		return -1;
 	}
+	private static int recursiveBinarySearch(int[] arr, int left, int right, int key) {
+		int mid = (left + right) / 2;
 
+		int index;
+
+		if (right < left) {
+			return -1;
+		}
+
+		if (key == arr[mid]) {
+			return mid;
+		}
+
+		if (key < arr[mid]) {
+			index = recursiveBinarySearch(arr, left, mid - 1, key);
+		} else {
+			index = recursiveBinarySearch(arr, mid + 1, right, key);
+		}
+
+		return index;
+	}
+	
 	private static int linearSearch(int[] arr, int key) {
 
 		for (int i = 0; i < arr.length; i++) {
@@ -41,8 +62,9 @@ public class SearchingDemo {
 		System.out.println("Enter a number to find");
 		int key = scan.nextInt();
 		
-		int result = binarySearch(arr, key);
-		int result = linearSearch(arr, key);
+		//int result = binarySearch(arr, key);
+		//int result = linearSearch(arr, key);
+		int result = recursiveBinarySearch(arr, 0, arr.length - 1, key);
 		if (result != -1) {
 			System.out.println("Number is found at : " + result);
 		} else {
