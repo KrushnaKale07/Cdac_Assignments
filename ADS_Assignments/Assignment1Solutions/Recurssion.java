@@ -44,6 +44,14 @@ public class Recurssion {
 		return recursiveFibonacciSeries(n - 1) + recursiveFibonacciSeries(n - 2);
 	}
 
+	private static String recursiveReverseString(String str) {
+
+		if (str == null || str.length() <= 1) {
+			return str;
+		}
+		return recursiveReverseString(str.substring(1)) + str.charAt(0);
+	}
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		// System.err.println("Enter a number to find factorial.");
@@ -62,9 +70,13 @@ public class Recurssion {
 			System.out.println("Key not found.");
 		}*/
 		
-		System.err.println("Enter a number to find fibonacii.");
+		/*System.err.println("Enter a number to find fibonacii.");
 		int num = scanner.nextInt();
-		System.out.println("Fibonacci of " + num + " is: " + recursiveFibonacciSeries(num));
+		System.out.println("Fibonacci of " + num + " is: " + recursiveFibonacciSeries(num));*/
+
+		System.out.println("Enter a string to reverce");
+		String str = scanner.next();
+		System.out.println("Reverse string of " + str + " is " + recursiveReverseString(str));
 	}
 
 }
