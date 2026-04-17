@@ -102,6 +102,29 @@ public class BST {
 			printInRange(root.right, x, y);
 		}
 	}
+	public static void printRoot2Leaf(Node root, ArrayList<Integer> path) {
+		if (root == null) {
+			return;
+		}
+
+		path.add(root.data);
+
+		if (root.left == null && root.right == null) {
+			printPath(path);
+		} else {
+			printRoot2Leaf(root.left, path);
+			printRoot2Leaf(root.right, path);
+		}
+		path.remove(path.size() - 1);
+	}
+
+	private static void printPath(ArrayList<Integer> path) {
+		for (int i = 0; i < path.size(); i++) {
+			System.out.print(path.get(i) + "->");
+		}
+		System.out.println();
+
+	}
 
 	public static void main(String[] args) {
 		int values[] = { 8, 5, 1, 3, 4, 6, 10,11,14 };
@@ -114,8 +137,10 @@ public class BST {
 		inorder(root);
 		System.out.println();
 
-		printInRange(root, 6, 10);
-
+		//printInRange(root, 6, 10);
+		
+		printRoot2Leaf(root, new ArrayList<>());
+		
 		//delete(root, 14);
 		//inorder(root);
 
