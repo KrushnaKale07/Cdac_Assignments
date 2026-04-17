@@ -28,6 +28,18 @@ public class BST {
 
 	}
 
+	public static void inorder(Node root) {
+
+		if (root == null) { // base condition
+			return;
+		}
+
+		inorder(root.left);
+		System.out.print(root.data + ", ");
+		inorder(root.right);
+
+	}
+
 
 	public static void main(String[] args) {
 		int values[] = { 8, 5, 1, 3, 4, 6, 10,11,14 };
@@ -36,6 +48,9 @@ public class BST {
 		for (int i = 0; i < values.length; i++) {
 			root = insert(root, values[i]);
 		}
+
+		inorder(root);
+		System.out.println();
 	}
 
 }
