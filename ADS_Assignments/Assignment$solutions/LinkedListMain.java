@@ -54,6 +54,19 @@ class SingleLinkedList {
 			trav.next = newNode;
 		}
 	}
+	public void addBegining(int val) {
+		// create new node
+		Node newNode = new Node(val);
+
+		if (head == null) {
+			head = newNode;
+		} else {
+			// new node next pointing to head
+			newNode.next = head;
+			// head should pointing to new node
+			head = newNode;
+		}
+	}
 }
 
 public class LinkedListMain {
@@ -63,12 +76,14 @@ public class LinkedListMain {
 
 		SingleLinkedList list = new SingleLinkedList();
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter the size of linked list.");
+		//System.out.println("Enter the size of linked list.");
+		System.out.println("Enter the value to add at start.");
 		int limit = scanner.nextInt();
 
 		System.out.println("Enter values .");
 		for (int i = 0; i < limit; i++) {
-			list.addEnd(scanner.nextInt());
+			//list.addEnd(scanner.nextInt());
+			list.addBegining(scanner.nextInt());
 		}
 
 		list.display();
