@@ -33,7 +33,11 @@ class SingleLinkedList {
 		}
 		//System.out.println("end");
 	}
-
+/*1. Create a LinkedList and insert elements at the end. 
+		 Testcase: 
+		 Existing LinkedList: [5, 10, 15] 
+		 Elements to insert: [20, 25] 
+		 Expected Output: LinkedList: 5 → 10 → 15 → 20 → 25*/
 	void addEnd(int val) {
 
 		// create new node
@@ -54,6 +58,13 @@ class SingleLinkedList {
 			trav.next = newNode;
 		}
 	}
+
+	/*
+	 * 2. Insert a new node at the beginning of a LinkedList. Testcase: Existing
+	 * LinkedList: [10, 20, 30] Node to insert: 5 
+	 * Expected Output: LinkedList: 5 →
+	 * 10 → 20 → 30
+	 */
 	public void addBegining(int val) {
 		// create new node
 		Node newNode = new Node(val);
