@@ -78,6 +78,27 @@ class SingleLinkedList {
 			head = newNode;
 		}
 	}
+	
+	/*3. Insert a new node at a given position in a LinkedList. 
+		 Testcase: 
+		 Existing LinkedList: [10, 20, 30, 40] 
+		 Node to insert: 25 at position 2 
+		 Expected Output: LinkedList: 10 → 20 → 25 → 30 → 40*/
+	public void insertAtPosition(int val, int position) {
+		Node newNode = new Node(val);
+		// Special case 1 : if list is empty. add node at the start
+		// special case 2 : if position <= 1, add node at the start
+		if (head == null || position <= 1) {
+			addEnd(val);
+		} else {
+			Node trav = head;
+			for (int i = 1; i <= position - 1; i++)
+				trav = trav.next;
+
+			newNode.next = trav.next;
+			trav.next = newNode;
+		}
+	}
 }
 
 public class LinkedListMain {
@@ -87,14 +108,14 @@ public class LinkedListMain {
 
 		SingleLinkedList list = new SingleLinkedList();
 		Scanner scanner = new Scanner(System.in);
-		//System.out.println("Enter the size of linked list.");
-		System.out.println("Enter the value to add at start.");
+		System.out.println("Enter the size of linked list.");
+		//System.out.println("Enter the value to add at start.");
 		int limit = scanner.nextInt();
 
 		System.out.println("Enter values .");
 		for (int i = 0; i < limit; i++) {
-			//list.addEnd(scanner.nextInt());
-			list.addBegining(scanner.nextInt());
+			list.addEnd(scanner.nextInt());
+			//list.addBegining(scanner.nextInt());
 		}
 
 		list.display();
