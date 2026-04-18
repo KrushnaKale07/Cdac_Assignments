@@ -99,6 +99,18 @@ class SingleLinkedList {
 			trav.next = newNode;
 		}
 	}
+	/*
+	 * Delete the first node of a LinkedList Testcase: Existing LinkedList: [10, 20,
+	 * 30, 40] Expected Output: LinkedList: 20 → 30 → 40
+	 */
+
+	public void deleteFirst() {
+		if (head != null) {
+			head = head.next;
+		} else {
+			throw new RuntimeException("List id empty");
+		}
+	}
 }
 
 public class LinkedListMain {
@@ -118,6 +130,7 @@ public class LinkedListMain {
 			//list.addBegining(scanner.nextInt());
 		}
 
+		list.deleteFirst();
 		list.display();
 
 		/*
