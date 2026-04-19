@@ -121,6 +121,20 @@ class SinglyCircularList {
 		}
 
 	}
+	public void countNodes() {
+		int count = 0;
+		if (isEmpty()) {
+			count = 0;
+			System.out.println("Count of total nodes is : " + count);
+		} else {
+			Node trav = head;
+			while (trav.next != head) {
+				count++;
+				trav = trav.next;
+			}
+			System.out.print("Count of total nodes is : " + ( ++count));
+		}
+	}
 }
 
 public class SinglyCircularListMain {
@@ -178,6 +192,9 @@ public class SinglyCircularListMain {
 				break;
 			case 8: // Del All
 				// list.delAll();
+				break;
+			case 9:
+				list.countNodes();
 				break;
 			}
 		} while (choice != 0);
