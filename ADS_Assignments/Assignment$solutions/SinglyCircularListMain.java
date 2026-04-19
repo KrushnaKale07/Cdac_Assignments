@@ -88,6 +88,23 @@ class SinglyCircularList {
 
 		}
 	}
+	public void delFirst() {
+		// special 1: if list is empty, throw exception
+		if (isEmpty()) {
+			throw new RuntimeException("List is empty.");
+		}
+		// special 2: if list has single node, then make head null
+		if (head.next == head) {
+			head = null;
+		} else {
+			Node trav = head;
+			while (trav.next != head) {
+				trav = trav.next;
+			}
+			head = head.next;
+			trav.next = head;
+		}
+	}
 }
 
 public class SinglyCircularListMain {
@@ -121,11 +138,11 @@ public class SinglyCircularListMain {
 				list.addAtPos(val, pos);
 				break;
 			case 5: // Del First
-//				try {
-//					list.delFirst();
-//				} catch (Exception e) {
-//					System.out.println(e.getMessage());
-//				}
+				try {
+					list.delFirst();
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
 				break;
 			case 6: // Del Last
 //				try {
