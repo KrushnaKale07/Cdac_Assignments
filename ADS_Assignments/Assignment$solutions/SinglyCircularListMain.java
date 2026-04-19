@@ -41,6 +41,21 @@ class SinglyCircularList {
 		} while (trav != head);
 
 	}
+	public void addLast(int val) {
+		Node newNode = new Node(val);
+
+		if (isEmpty()) {
+			head = newNode;
+			newNode.next = head;
+		} else {
+			Node trav = head;
+			while (trav.next != head) {
+				trav = trav.next;
+			}
+			newNode.next = head;
+			trav.next = newNode;
+		}
+	}
 }
 
 public class SinglyCircularListMain {
@@ -62,9 +77,9 @@ public class SinglyCircularListMain {
 //				list.addFirst(val);
 				break;
 			case 3: // Add Last
-//				System.out.print("Enter new element: ");
-//				val = sc.nextInt();
-//				list.addLast(val);
+				System.out.print("Enter new element: ");
+				val = sc.nextInt();
+				list.addLast(val);
 				break;
 			case 4: // Add At Pos
 //				System.out.print("Enter new element: ");
