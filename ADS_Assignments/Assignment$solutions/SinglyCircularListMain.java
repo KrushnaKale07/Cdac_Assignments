@@ -105,6 +105,22 @@ class SinglyCircularList {
 			trav.next = head;
 		}
 	}
+	public void delLast() {
+		if (isEmpty()) {
+			throw new RuntimeException("List is empty.");
+		}
+		if (head.next == head) {
+			head = null;
+		} else {
+			Node prev = null, trav = head;
+			while (trav.next != head) {
+				prev = trav;
+				trav = trav.next;
+			}
+			prev.next = head;
+		}
+
+	}
 }
 
 public class SinglyCircularListMain {
@@ -145,11 +161,11 @@ public class SinglyCircularListMain {
 				}
 				break;
 			case 6: // Del Last
-//				try {
-//					list.delLast();
-//				} catch (Exception e) {
-//					System.out.println(e.getMessage());
-//				}
+				try {
+					list.delLast();
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
 				break;
 			case 7: // Del At Pos
 //				System.out.print("Enter element position: ");
