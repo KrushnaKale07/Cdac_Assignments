@@ -24,7 +24,18 @@ public class Searching {
 	public static void main(String[] args) {
 
 		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		System.out.println(binarySearch(arr, 8));
+		//System.out.println(binarySearch(arr, 8));
+		
+		System.out.println(factorial(4));
+	}
+
+	private static int factorial(int i) {
+		int r;
+		if(i==1) {
+			return 1;
+		}
+		r = i * factorial(i-1);
+		return r;
 	}
 
 }
