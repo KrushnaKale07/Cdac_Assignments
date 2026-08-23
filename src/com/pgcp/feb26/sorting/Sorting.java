@@ -6,8 +6,28 @@ public class Sorting {
 		int arr [] = { 5, 6, 3, 8, 1 };
 //		selectionSort(arr);
 //		System.out.println("Selection Sorted array is: " + java.util.Arrays.toString(arr));
-		bubbleSort(arr);
+//		bubbleSort(arr);
+		impBbbleSort(arr);
 		System.out.println("Bubble Sorted array is: " + java.util.Arrays.toString(arr));
+	}
+
+	private static void impBbbleSort(int[] arr) {
+		for(int i = 0; i < arr.length - 1; i++) {
+			boolean swapped = false;
+			for(int j = 0; j < arr.length - 1 - i; j++) {
+				if(arr[j] > arr[j + 1]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+					swapped = true;
+				}
+			}
+			if(!swapped) {
+				break;
+			}
+			
+		}
+		
 	}
 
 	private static void bubbleSort(int[] arr) {
