@@ -7,8 +7,22 @@ public class Sorting {
 //		selectionSort(arr);
 //		System.out.println("Selection Sorted array is: " + java.util.Arrays.toString(arr));
 //		bubbleSort(arr);
-		impBbbleSort(arr);
+//		impBbbleSort(arr);
+		insertionSort(arr);
 		System.out.println("Bubble Sorted array is: " + java.util.Arrays.toString(arr));
+	}
+
+	private static void insertionSort(int[] arr) {
+		for(int i = 1; i < arr.length; i++) {
+			int key = arr[i];
+			int j = i - 1;
+			while(j >= 0 && arr[j] > key) {
+				arr[j + 1] = arr[j];
+				j--;
+			}
+			arr[j + 1] = key;	
+			
+		}
 	}
 
 	private static void impBbbleSort(int[] arr) {
