@@ -70,6 +70,17 @@ class SinglyLinkedList {
 		System.out.print("Reverse List: ");
 		revDispaplay(head);
 	}
+	
+	public int findMiddle() {
+		Node slow = head;
+		Node fast = head;
+		
+		while(fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		return slow.data;
+	}
 }
 
 public class LinkedListMain {
@@ -80,13 +91,15 @@ public class LinkedListMain {
 		list.insertAtEnd(5);
 		list.insertAtEnd(6);
 		list.insertAtEnd(8);
+		list.insertAtEnd(9);
 		
-		System.out.println("Before reversing the list");
+//		System.out.println("Before reversing the list");
 		list.display();
-		System.out.println("After reversing the list");
+//		System.out.println("After reversing the list");
 //		list.reverse();
 //		list.display();
 
-		list.revDispaplay();
+//		list.revDispaplay();
+		System.out.println("Middle element of the list is: " + list.findMiddle());
 	}
 }
